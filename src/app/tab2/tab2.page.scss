@@ -1,0 +1,33 @@
+.backprincipal{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    background: white;
+    padding: 16px;
+    grid-template-columns: 30% 40% 30%;
+}
+.qr{
+    background: rgb(255, 253, 253);
+    width: 100%;
+    height: 100%;
+}
+.checadormanual{
+    background: rgb(254, 254, 255);
+    width: 100%;
+    height: 100%;
+}
+.calenadario{
+    background: rgb(254, 254, 255);
+    width: 100%;
+    height: 100%;
+
+}
+.titulo_home{
+    margin: 120px;
+   
+}
+.imagen_p{
+    max-width: 3%;
+    
+}

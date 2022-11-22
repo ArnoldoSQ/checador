@@ -1,17 +1,70 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
+    <ion-title size="center" color="dark">
+      <img src="/assets/icon/servicio_social.jpg" class="imagen_p">
+      <label class="titulo_home" >SUBDIRECCION DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label> 
+      
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
+   
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
+<ion-header >
+  <div class="backprincipal">
+  <ion-card class="calenadario">
+    <ion-card-header > 
+        <ion-card-title color="dark">Calendario</ion-card-title> 
+        <ion-card-content>
+          <ion-datetime></ion-datetime>
+        </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card class="qr">
+    <ion-card-header > 
+        <ion-card-title color="dark">Leer</ion-card-title> 
+        <ion-card-content>
+          <div id="contenedorImg"></div>
+        </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+  <ion-card class="checadormanual">
+    <ion-card-header > 
+        <ion-card-title color="dark">Ingresear </ion-card-title> 
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Matricula</ion-label>
+            <ion-input  placeholder="Ingrese Numero de Matricula"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password"   placeholder ="Ingrese Su Contraseña"></ion-input>
+          </ion-item>
+          
+          
+          <ion-button (click)="checarllegada()"> Entrada 
+
+          </ion-button>
+          
+          <ion-button> Salida  
+         </ion-button>
+        </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+ 
+</div>
+
+</ion-header>
+  
+ 
 </ion-content>

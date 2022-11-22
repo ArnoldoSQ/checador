@@ -9,7 +9,7 @@ export class ExploreContainerComponent implements OnInit {
   @Input() name: string;
 
   constructor() { }
-
+  
   ngOnInit() {}
 
 }
