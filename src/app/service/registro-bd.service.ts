@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
 import { CheckRequest } from './Model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -8,21 +9,29 @@ import { HttpClient } from '@angular/common/http';
 export class RegistroBdService {
   constructor(private http: HttpClient) {}
 
-  checarllegada(checkRequest: CheckRequest) {
-    return this.http
-      .post(
-        'https://us-central1-entrada-personal.cloudfunctions.net/checarLlegada',
-        checkRequest
-      )
-      .toPromise();
+  async checarllegada(checkRequest: CheckRequest) {
+    const response = await fetch(
+      'https://us-central1-entrada-personal.cloudfunctions.net/checarLlegada',
+      {
+        method: 'POST',
+        body: JSON.stringify(checkRequest),
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+
+    return response.text();
   }
 
-  checaSalida(checkRequest: CheckRequest) {
-    return this.http
-      .post(
-        'https://us-central1-entrada-personal.cloudfunctions.net/checarSalida',
-        checkRequest
-      )
-      .toPromise();
+  async checarSalida(checkRequest: CheckRequest) {
+    const response = await fetch(
+      'https://us-central1-entrada-personal.cloudfunctions.net/checarSalida',
+      {
+        method: 'POST',
+        body: JSON.stringify(checkRequest),
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+
+    return response.text();
   }
 }

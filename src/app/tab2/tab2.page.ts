@@ -10,7 +10,6 @@ import { RegistroBdService } from '../service/registro-bd.service';
 })
 export class Tab2Page implements OnInit {
   public codigo = '';
-
   constructor(private registro: RegistroBdService) {}
 
   async ngOnInit() {
@@ -25,13 +24,26 @@ export class Tab2Page implements OnInit {
     });
   }
 
-  checarllegada() {
-    this.registro.checarllegada({
-      contraseña: '123456',
-      matricula: '123456',
+  async checarllegada(matricula: any, password: any) {
+    console.log(matricula + ' - ' + password);
+    const prueballegada = await this.registro.checarllegada({
+      contraseña: password,
+      matricula,
       localizacion: {
-        latitud: 123456,
-        longitud: 789456,
+        latitud: 0,
+        longitud: 0,
+      },
+    });
+  }
+
+  async checarSalida(matricula: any, password: any) {
+    console.log(matricula + ' - ' + password);
+    const pruebasalida = await this.registro.checarSalida({
+      contraseña: password,
+      matricula,
+      localizacion: {
+        latitud: 0,
+        longitud: 0,
       },
     });
   }
