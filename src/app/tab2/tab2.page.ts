@@ -14,9 +14,8 @@ export class Tab2Page implements OnInit {
 
   async ngOnInit() {
     const cliente = {
-      nombre: 'Luis Alejandro Guerrero Hernández',
-      num: '20834',
-      email: 'luis.guerrero@uas.edu.mx',
+      nombre: 'http://localhost:4200/app',
+
     };
     QRCode.toString(JSON.stringify(cliente), (err, url) => {
       this.codigo = url;
