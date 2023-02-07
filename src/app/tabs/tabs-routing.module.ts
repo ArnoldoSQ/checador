@@ -17,21 +17,21 @@ const routes: Routes = [
   {
     path: 'admin',
     component: TabsPage,
-    children: [
-      {
-        path: 'historial-diario',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-      },
-      {
-        path: 'historial-completo',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
-      {
-        path: '',
-        redirectTo: '/admin/historial-diario',
-        pathMatch: 'full'
-      }
-    ]
+    // children: [
+    //   {
+    //     path: 'historial-diario',
+    //     loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+    //   },
+    //   {
+    //     path: 'historial-completo',
+    //     loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+    //   },
+    //   {
+    //     path: '',
+    //     redirectTo: '/admin/historial-diario',
+    //     pathMatch: 'full'
+    //   }
+    // ]
   },
   {
     path: '',

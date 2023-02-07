@@ -1,0 +1,21 @@
+{
+  "extensions.ignoreRecommendations": false,
+  "explorer.confirmDelete": false,
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [100],
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "html.format.wrapAttributes": "force",
+  "html.format.enable": true,
+  "editor.formatOnSaveMode": "file",
+  "html.format.wrapLineLength": 100,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
+}
