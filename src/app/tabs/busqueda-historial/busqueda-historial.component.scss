@@ -1,0 +1,15 @@
+.busqueda-historial-form{
+    display: grid;
+    grid-template-columns: 150px 150px min-content;
+    align-items: flex-end;
+    gap: 16px;
+
+    .field{
+        display: grid;
+        gap: 4px;
+    }
+
+    .filter-button{
+        margin: 0;
+    }
+}

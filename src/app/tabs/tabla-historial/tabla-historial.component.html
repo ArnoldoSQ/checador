@@ -20,16 +20,19 @@
         dataType="number"
         alignment="center"
         caption="Matrícula"
+        [editorOptions]="{placeholder: 'Matrícula'}"
         [calculateDisplayValue]="matriculaDisplayValue">
     </dxi-column>
 
     <dxi-column
         dataField="nombre"
-        caption="Nombre">
+        caption="Nombre"
+        [editorOptions]="{placeholder: 'Nombre'}">
     </dxi-column>
 
     <dxi-column
         dataField="hora"
-        caption="Hora">
+        caption="Hora"
+        [editorOptions]="{placeholder: 'Hora'}">
     </dxi-column>
 </dx-data-grid>

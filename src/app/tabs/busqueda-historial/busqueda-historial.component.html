@@ -1,3 +1,25 @@
-<p>
-  busqueda-historial works!
-</p>
+<form class="busqueda-historial-form" [formGroup]="reactiveForm">
+    <div class="field">
+        <label>Desde: </label>    
+        <dx-date-box
+            placeholder="Fecha desde" 
+            [acceptCustomValue]="false"
+            [openOnFieldClick]="true"
+            displayFormat="dd/MM/yyyy"
+            formControlName="desde">
+        </dx-date-box>
+    </div>
+
+    <div class="field">
+        <label>Hasta: </label>    
+        <dx-date-box
+            placeholder="Fecha hasta" 
+            [acceptCustomValue]="false"
+            [openOnFieldClick]="true"
+            displayFormat="dd/MM/yyyy"
+            formControlName="hasta" [max]="hoy">
+        </dx-date-box>
+    </div>
+
+    <ion-button class="filter-button" (click)="onFilter()" [disabled]="!reactiveForm?.valid">Filtrar</ion-button>
+</form>

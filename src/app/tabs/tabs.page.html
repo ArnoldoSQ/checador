@@ -3,22 +3,21 @@
       <ion-title size="center" color="dark">
         <img src="/assets/icon/servicio_social.jpg" class="imagen_p">
         <label class="titulo_home" >SUBDIRECCIÓN DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label>
-  
       </ion-title>
-  
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="admin-content-container">
+    <div class="admin-content-container">
 
-    <div class="admin-content">
-        <div class="admin-content-title">ENTRADAS DEL DÍA DE HOY</div>
-        <app-tabla-historial></app-tabla-historial>
-    </div>
+        <div class="admin-content">
+            <div class="admin-content-title">ENTRADAS DEL DÍA DE HOY</div>
+            <app-tabla-historial></app-tabla-historial>
+        </div>
 
-    <div class="admin-content">
-        <app-tabla-historial></app-tabla-historial>
+        <div class="admin-content-form">
+            <app-busqueda-historial></app-busqueda-historial>
+            <app-tabla-historial></app-tabla-historial>
+        </div>
     </div>
-  </div>
 </ion-content>
