@@ -7,6 +7,7 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 import { DxDataGridModule } from 'devextreme-angular';
+import { TablaHistorialComponent } from './tabla-historial/tabla-historial.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { DxDataGridModule } from 'devextreme-angular';
     TabsPageRoutingModule,
     DxDataGridModule,
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage, TablaHistorialComponent]
 })
 export class TabsPageModule {}

@@ -2,7 +2,7 @@
     <ion-toolbar>
       <ion-title size="center" color="dark">
         <img src="/assets/icon/servicio_social.jpg" class="imagen_p">
-        <label class="titulo_home" >SUBDIRECCION DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label>
+        <label class="titulo_home" >SUBDIRECCIÓN DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label>
   
       </ion-title>
   
@@ -10,50 +10,15 @@
 </ion-header>
 
 <ion-content>
-  <content class="admin-content-container">
+  <div class="admin-content-container">
 
     <div class="admin-content">
         <div class="admin-content-title">ENTRADAS DEL DÍA DE HOY</div>
-        <dx-data-grid
-            [dataSource]="registrosDia"
-            keyExpr="matricula"
-            [hoverStateEnabled]="true"
-            [filterRow]="{ visible: true }"
-            [scrolling]="{ mode: 'infinite' }"
-            [rowAlternationEnabled]="true"
-            [showBorders]="true"
-            [showColumnLines]="true"
-            [showRowLines]="true"
-            [wordWrapEnabled]="true"
-            [errorRowEnabled]="false"
-            width="100%"
-            height="100%"
-            noDataText="Sin datos">
-
-            <dxi-column
-            dataField="matricula"
-            [width]="110"
-            dataType="number"
-            alignment="center"
-            caption="Matrícula"
-            [calculateDisplayValue]="matriculaDisplayValue">
-            </dxi-column>
-
-            <dxi-column
-            dataField="nombre"
-            caption="Nombre">
-            </dxi-column>
-
-            <dxi-column
-            dataField="hora"
-            caption="Hora">
-            </dxi-column>
-        </dx-data-grid>
+        <app-tabla-historial></app-tabla-historial>
     </div>
 
     <div class="admin-content">
-        <div>ENTRADAS DEL DÍA DE HOY</div>
-        <dx-data-grid></dx-data-grid>
+        <app-tabla-historial></app-tabla-historial>
     </div>
-  </content>
+  </div>
 </ion-content>

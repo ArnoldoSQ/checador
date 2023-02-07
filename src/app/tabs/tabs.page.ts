@@ -8,13 +8,6 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-  public registrosDia: any = [
-    {
-      matricula: 12345,
-      nombre: 'El nombre',
-      hora: 'la hora',
-    }
-  ];
 
   constructor(private alertController: AlertController) {}
 
@@ -36,9 +29,4 @@ export class TabsPage {
 
     await alert.present();
   }
-
-  matriculaDisplayValue(personal: any) {
-    return personal?.matricula && `${String(personal.matricula).padStart(5, '0')}` || '';
-  }
-
 }
