@@ -1,9 +1,11 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="center" color="dark">
-        <img src="/assets/icon/servicio_social.jpg" class="imagen_p">
-        <label class="titulo_home" >SUBDIRECCIÓN DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label>
-      </ion-title>
+        <ion-title size="center"
+            color="dark">
+            <img src="/assets/icon/servicio_social.jpg"
+                class="imagen_p">
+            <label class="titulo_home">SUBDIRECCIÓN DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label>
+        </ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -12,12 +14,12 @@
 
         <div class="admin-content">
             <div class="admin-content-title">ENTRADAS DEL DÍA DE HOY</div>
-            <app-tabla-historial></app-tabla-historial>
+            <app-tabla-historial [data]="historialDiario"></app-tabla-historial>
         </div>
 
         <div class="admin-content-form">
-            <app-busqueda-historial></app-busqueda-historial>
-            <app-tabla-historial></app-tabla-historial>
+            <app-busqueda-historial (filtrar)="filtrar($event)"></app-busqueda-historial>
+            <app-tabla-historial [data]="historialBusqueda"></app-tabla-historial>
         </div>
     </div>
 </ion-content>

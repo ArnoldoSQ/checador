@@ -1,25 +1,27 @@
-<form class="busqueda-historial-form" [formGroup]="reactiveForm">
+<form class="busqueda-historial-form"
+    [formGroup]="reactiveForm">
     <div class="field">
-        <label>Desde: </label>    
-        <dx-date-box
-            placeholder="Fecha desde" 
+        <label>Desde: </label>
+        <dx-date-box placeholder="Fecha desde"
             [acceptCustomValue]="false"
             [openOnFieldClick]="true"
             displayFormat="dd/MM/yyyy"
-            formControlName="desde">
+            formControlName="fechadesde">
         </dx-date-box>
     </div>
 
     <div class="field">
-        <label>Hasta: </label>    
-        <dx-date-box
-            placeholder="Fecha hasta" 
+        <label>Hasta: </label>
+        <dx-date-box placeholder="Fecha hasta"
+            [max]="hoy"
             [acceptCustomValue]="false"
             [openOnFieldClick]="true"
             displayFormat="dd/MM/yyyy"
-            formControlName="hasta" [max]="hoy">
+            formControlName="fechaasta">
         </dx-date-box>
     </div>
 
-    <ion-button class="filter-button" (click)="onFilter()" [disabled]="!reactiveForm?.valid">Filtrar</ion-button>
+    <ion-button class="filter-button"
+        (click)="onFilter()"
+        [disabled]="!reactiveForm?.valid">Filtrar</ion-button>
 </form>

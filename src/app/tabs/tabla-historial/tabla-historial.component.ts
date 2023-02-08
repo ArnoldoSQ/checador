@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import ArrayStore from 'devextreme/data/array_store';
+import DataSource from 'devextreme/data/data_source';
 
 @Component({
     selector: 'app-tabla-historial',
@@ -6,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./tabla-historial.component.scss'],
 })
 export class TablaHistorialComponent implements OnInit {
-    public dataSource: any = [
-        {
-            matricula: 12345,
-            nombre: 'El nombre',
-            hora: 'la hora',
-        }
-    ];
+    public dataSource?: DataSource<any, any>;
 
     constructor() { }
+
+    @Input() set data(data: any[]) {
+        this.dataSource = new DataSource({
+            store: new ArrayStore({
+                key: 'matricula',
+                data: data || []
+            })
+        });
+    }
 
     ngOnInit() { }
 

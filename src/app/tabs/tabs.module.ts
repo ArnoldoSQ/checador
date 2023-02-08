@@ -9,6 +9,7 @@ import { TabsPage } from './tabs.page';
 import { DxDataGridModule, DxDateBoxModule } from 'devextreme-angular';
 import { TablaHistorialComponent } from './tabla-historial/tabla-historial.component';
 import { BusquedaHistorialComponent } from './busqueda-historial/busqueda-historial.component';
+import { ConsultaBdService } from '../service/consulta-bd.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { BusquedaHistorialComponent } from './busqueda-historial/busqueda-histor
     DxDataGridModule,
     DxDateBoxModule
   ],
-  declarations: [TabsPage, TablaHistorialComponent, BusquedaHistorialComponent]
+  declarations: [TabsPage, TablaHistorialComponent, BusquedaHistorialComponent],
+  providers: [ConsultaBdService]
 })
-export class TabsPageModule {}
+export class TabsPageModule { }

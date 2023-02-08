@@ -1,32 +1,28 @@
-import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-
+import { Component, OnInit } from '@angular/core';
+import { ConsultaBdService } from '../service/consulta-bd.service';
+import { ConsultaHistorial } from '../service/HistorialRequest';
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+    selector: 'app-tabs',
+    templateUrl: 'tabs.page.html',
+    styleUrls: ['tabs.page.scss']
 })
-export class TabsPage {
+export class TabsPage implements OnInit {
+    public historialDiario: any[] = [];
+    public historialBusqueda: any[] = [];
 
-  constructor(private alertController: AlertController) {}
+    constructor(private consultaBd: ConsultaBdService) { }
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Inicio de sesión',
-      buttons: ['Iniciar sesión'],
-      inputs: [
-        {
-          placeholder: 'Numero de empleado ',
-        },
-        {
-          placeholder: 'Contraseña',attributes: {
-            maxlength: 8,
-          },
-        }
-      ],
-    });
+    ngOnInit(): void {
+        this.obtenerHistorialHoy();
+    }
 
-    await alert.present();
-  }
+    async filtrar(consulta: ConsultaHistorial) {
+        this.historialBusqueda = await this.consultaBd.consultarHistorial(consulta);
+    }
+
+    async obtenerHistorialHoy() {
+        this.historialDiario = await this.consultaBd.consultarHistorialHoy();
+        setTimeout(this.obtenerHistorialHoy.bind(this), 240000);
+    }
 }

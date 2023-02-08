@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ConsultaHistorial } from 'src/app/service/HistorialRequest';
 
 @Component({
     selector: 'app-busqueda-historial',
@@ -7,10 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     styleUrls: ['./busqueda-historial.component.scss'],
 })
 export class BusquedaHistorialComponent implements OnInit {
-    @Output() filtrar = new EventEmitter<{
-        desde: Date;
-        hasta: Date;
-    }>();
+    @Output() filtrar = new EventEmitter<ConsultaHistorial>();
 
     public reactiveForm: FormGroup;
     public hoy: Date = new Date();
@@ -19,13 +17,13 @@ export class BusquedaHistorialComponent implements OnInit {
 
     ngOnInit() {
         this.reactiveForm = this.fb.group({
-            desde: [null, Validators.required],
-            hasta: [null, Validators.required],
+            fechadesde: [null, Validators.required],
+            fechaasta: [null, Validators.required],
         });
     }
 
-    onFilter(){
-        if(this.reactiveForm?.valid){
+    onFilter() {
+        if (this.reactiveForm?.valid) {
             this.filtrar.emit(this.reactiveForm.value);
         }
     }
