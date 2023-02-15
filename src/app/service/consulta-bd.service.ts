@@ -14,8 +14,8 @@ export class ConsultaBdService {
             {
                 method: 'POST',
                 body: JSON.stringify({
-                    fechadesde: consultaHistorial.fechadesde.toLocaleString('en-US', { timeZone: 'America/Mazatlan' }),
-                    fechaasta: consultaHistorial.fechaasta.toLocaleString('en-US', { timeZone: 'America/Mazatlan' }),
+                    fechadesde: this.formatDate(consultaHistorial.fechadesde),
+                    fechaasta: this.formatDate(consultaHistorial.fechaasta),
                 }),
                 headers: { 'Content-Type': 'application/json' },
             }
@@ -29,5 +29,15 @@ export class ConsultaBdService {
             fechadesde: new Date(),
             fechaasta: new Date()
         });
+    }
+
+    formatDate(parameter: Date | string) {
+        const date = new Date(parameter);
+
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear().toString().padStart(2, '0');
+
+        return `${year}-${month}-${day}`;
     }
 }
