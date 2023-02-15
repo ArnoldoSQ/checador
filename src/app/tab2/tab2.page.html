@@ -1,8 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title size="center" color="dark">
-      <img src="/assets/icon/servicio_social.jpg" class="imagen_p">
-      <label class="titulo_home" >SUBDIRECCION DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label>
+    <ion-title size="center"
+      color="dark">
+      <img src="/assets/icon/servicio_social.jpg"
+        class="imagen_p">
+      <label class="titulo_home">SUBDIRECCION DE SERVICIO SOCIAL UNIDAD REGIONAL NORTE</label>
 
     </ion-title>
 
@@ -16,52 +18,56 @@
       <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
-<ion-header >
-  <div class="backprincipal">
-  <ion-card class="calenadario">
-    <ion-card-header >
-        <ion-card-title color="dark">Calendario</ion-card-title>
-        <ion-card-content>
-          <ion-datetime></ion-datetime>
-        </ion-card-content>
-    </ion-card-header>
-  </ion-card>
+  <ion-header>
+    <div class="backprincipal">
+      <ion-card class="calenadario">
+        <ion-card-header>
+          <ion-card-title color="dark">Calendario</ion-card-title>
+          <ion-card-content>
+            <ion-datetime></ion-datetime>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
 
-  <ion-card class="qr">
-    <ion-card-header >
-        <ion-card-title color="dark">Leer</ion-card-title>
-        <ion-card-content>
-          <div id="contenedorImg"></div>
-        </ion-card-content>
-    </ion-card-header>
-  </ion-card>
-  <ion-card class="checadormanual">
-    <ion-card-header >
-        <ion-card-title color="dark">Ingresear </ion-card-title>
-        <ion-card-content>
-          <ion-item>
-            <ion-label position="floating">Matricula</ion-label>
-            <ion-input #matr placeholder="Ingrese Numero de Matricula"></ion-input>
-          </ion-item>
+      <ion-card class="qr">
+        <ion-card-header>
+          <ion-card-title color="dark">Leer</ion-card-title>
+          <ion-card-content>
+            <div id="contenedorImg"></div>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
+      <ion-card class="checadormanual">
+        <ion-card-header>
+          <ion-card-title color="dark">Ingresear </ion-card-title>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Matricula</ion-label>
+              <ion-input #matr
+                placeholder="Ingrese Numero de Matricula"
+                type="number"></ion-input>
+            </ion-item>
 
-          <ion-item>
-            <ion-label position="floating">Contraseña</ion-label>
-            <ion-input #pass type="password" placeholder="Ingrese Su Contraseña"></ion-input>
-          </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input #pass
+                type="password"
+                placeholder="Ingrese Su Contraseña"></ion-input>
+            </ion-item>
 
-          <ion-button (click)="checarllegada(matr?.value, pass?.value)"> Entrada
-          </ion-button>
+            <ion-button (click)="checarllegada(matr?.value, pass?.value)"> Entrada
+            </ion-button>
 
-          <ion-button (click)="checarSalida(matr?.value, pass?.value)"> Salida
-         </ion-button>
-        </ion-card-content>
-    </ion-card-header>
-  </ion-card>
+            <ion-button (click)="checarSalida(matr?.value, pass?.value)"> Salida
+            </ion-button>
+          </ion-card-content>
+        </ion-card-header>
+      </ion-card>
 
 
-</div>
+    </div>
 
-</ion-header>
+  </ion-header>
 
 
 </ion-content>
