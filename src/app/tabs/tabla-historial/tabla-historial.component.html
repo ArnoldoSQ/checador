@@ -1,5 +1,4 @@
-<dx-data-grid
-    [dataSource]="dataSource"
+<dx-data-grid [dataSource]="dataSource"
     keyExpr="matricula"
     [hoverStateEnabled]="true"
     [filterRow]="{ visible: true }"
@@ -14,8 +13,7 @@
     height="100%"
     noDataText="Sin datos">
 
-    <dxi-column
-        dataField="matricula"
+    <dxi-column dataField="matricula"
         [width]="110"
         dataType="number"
         alignment="center"
@@ -24,15 +22,19 @@
         [calculateDisplayValue]="matriculaDisplayValue">
     </dxi-column>
 
-    <dxi-column
-        dataField="nombre"
+    <dxi-column dataField="nombre"
         caption="Nombre"
         [editorOptions]="{placeholder: 'Nombre'}">
     </dxi-column>
 
-    <dxi-column
-        dataField="hora"
+    <dxi-column dataField="hora"
         caption="Hora"
         [editorOptions]="{placeholder: 'Hora'}">
+    </dxi-column>
+
+    <dxi-column dataField="tocaLimpieza"
+        caption="Limpieza"
+        type="boolean"
+        [editorOptions]="{placeholder: 'Limpieza'}">
     </dxi-column>
 </dx-data-grid>

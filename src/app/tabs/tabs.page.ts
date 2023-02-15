@@ -8,13 +8,26 @@ import { ConsultaHistorial } from '../service/HistorialRequest';
     styleUrls: ['tabs.page.scss']
 })
 export class TabsPage implements OnInit {
-    public historialDiario: any[] = [];
+    public historialDiario: any[] = [
+        {
+            matricula: 11223,
+            nombre: 'Test 1',
+            hora: '09:00 A.M',
+            tocaLimpieza: true,
+        },
+        {
+            matricula: 44556,
+            nombre: 'Test 2',
+            hora: '09:04 A.M',
+            tocaLimpieza: false,
+        }
+    ];
     public historialBusqueda: any[] = [];
 
     constructor(private consultaBd: ConsultaBdService) { }
 
     ngOnInit(): void {
-        this.obtenerHistorialHoy();
+        // this.obtenerHistorialHoy();
     }
 
     async filtrar(consulta: ConsultaHistorial) {
