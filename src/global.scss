@@ -53,3 +53,16 @@
     font-weight: bold;
   }
 }
+
+.alert-wrapper {
+  .alert-head {
+    background: #383085;
+    .alert-title {
+      color: white;
+    }
+  }
+
+  .alert-message {
+    padding-top: 24px !important;
+  }
+}
