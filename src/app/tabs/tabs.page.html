@@ -17,12 +17,16 @@
 
         <div class="admin-content">
             <div class="admin-content-title">ENTRADAS DEL DÍA DE HOY</div>
-            <app-tabla-historial [data]="historialDiario"></app-tabla-historial>
+            <app-tabla-historial [isOnlyToday]="true"
+                [data]="historialDiario">
+            </app-tabla-historial>
         </div>
 
         <div class="admin-content-form">
             <app-busqueda-historial (filtrar)="filtrar($event)"></app-busqueda-historial>
-            <app-tabla-historial [data]="historialBusqueda"></app-tabla-historial>
+            <app-tabla-historial [isOnlyToday]="false"
+                [data]="historialBusqueda">
+            </app-tabla-historial>
         </div>
     </div>
 </ion-content>

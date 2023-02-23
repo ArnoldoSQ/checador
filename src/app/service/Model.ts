@@ -66,7 +66,7 @@ export class RespuestaChecador {
 export class Historial {
   matricula: string;
   nombre: string;
-  hora: Date;
+  hora: number;
   localizacion: Cordenadas;
   status: string;
 }

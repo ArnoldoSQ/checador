@@ -29,8 +29,10 @@
 
     <dxi-column dataField="hora"
         caption="Hora"
+        alignment="center"
         dataType="datetime"
-        format="HH:mm"
+        [width]="isOnlyToday ? 120 : 200"
+        [format]="isOnlyToday ? 'HH:mm aa' : 'dd/MM/yyyy HH:mm aa'"
         [editorOptions]="{placeholder: 'Hora'}">
     </dxi-column>
 

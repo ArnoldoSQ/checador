@@ -22,7 +22,8 @@ export class ConsultaBdService {
             }
         );
 
-        return response.json();
+        const historial: Historial[] = await response.json() || [];
+        return historial.map((h: Historial) => ({ ...h, hora: h.hora - 3600000 }));
     }
 
     async consultarHistorialHoy() {
