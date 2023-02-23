@@ -9,6 +9,8 @@ import { Historial } from 'src/app/service/Model';
     styleUrls: ['./tabla-historial.component.scss'],
 })
 export class TablaHistorialComponent implements OnInit {
+    @Input() isOnlyToday: boolean;
+
     public dataSource?: DataSource<Historial, string>;
 
     constructor() { }
