@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
 import { ConsultaHistorial } from './HistorialRequest';
+import { Historial } from './Model';
 
 @Injectable({
     providedIn: 'root',
@@ -8,7 +9,7 @@ import { ConsultaHistorial } from './HistorialRequest';
 export class ConsultaBdService {
     constructor() { }
 
-    async consultarHistorial(consultaHistorial: ConsultaHistorial) {
+    async consultarHistorial(consultaHistorial: ConsultaHistorial): Promise<Historial[]> {
         const response = await fetch(
             'https://us-central1-entrada-personal.cloudfunctions.net/consultarHistorial',
             {

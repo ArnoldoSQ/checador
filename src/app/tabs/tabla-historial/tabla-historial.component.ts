@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import ArrayStore from 'devextreme/data/array_store';
 import DataSource from 'devextreme/data/data_source';
+import { Historial } from 'src/app/service/Model';
 
 @Component({
     selector: 'app-tabla-historial',
@@ -8,11 +9,11 @@ import DataSource from 'devextreme/data/data_source';
     styleUrls: ['./tabla-historial.component.scss'],
 })
 export class TablaHistorialComponent implements OnInit {
-    public dataSource?: DataSource<any, any>;
+    public dataSource?: DataSource<Historial, string>;
 
     constructor() { }
 
-    @Input() set data(data: any[]) {
+    @Input() set data(data: Historial[]) {
         this.dataSource = new DataSource({
             store: new ArrayStore({
                 key: 'matricula',

@@ -29,12 +29,19 @@
 
     <dxi-column dataField="hora"
         caption="Hora"
+        dataType="datetime"
+        format="HH:mm"
         [editorOptions]="{placeholder: 'Hora'}">
     </dxi-column>
 
-    <dxi-column dataField="tocaLimpieza"
+    <dxi-column dataField="status"
+        caption="Estatus"
+        [editorOptions]="{placeholder: 'Estatus'}">
+    </dxi-column>
+
+    <!-- <dxi-column dataField="tocaLimpieza"
         caption="Limpieza"
         type="boolean"
         [editorOptions]="{placeholder: 'Limpieza'}">
-    </dxi-column>
+    </dxi-column> -->
 </dx-data-grid>

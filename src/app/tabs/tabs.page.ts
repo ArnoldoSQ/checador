@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { ConsultaBdService } from '../service/consulta-bd.service';
 import { ConsultaHistorial } from '../service/HistorialRequest';
+import { Historial } from '../service/Model';
 
 @Component({
   selector: 'app-tabs',
@@ -10,21 +11,8 @@ import { ConsultaHistorial } from '../service/HistorialRequest';
 })
 export class TabsPage implements OnInit {
   public carga = null;
-  public historialDiario: any[] = [
-    {
-      matricula: 11223,
-      nombre: 'Test 1',
-      hora: '09:00 A.M',
-      tocaLimpieza: true,
-    },
-    {
-      matricula: 44556,
-      nombre: 'Test 2',
-      hora: '09:04 A.M',
-      tocaLimpieza: false,
-    }
-  ];
-  public historialBusqueda: any[] = [];
+  public historialDiario: Historial[] = [];
+  public historialBusqueda: Historial[] = [];
 
   constructor(private consultaBd: ConsultaBdService, private loadingCtrl: LoadingController) { }
 

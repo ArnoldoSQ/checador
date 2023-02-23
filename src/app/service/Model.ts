@@ -63,3 +63,10 @@ export class RespuestaChecador {
     this.mensaje = respuesta.mensaje;
   }
 }
+export class Historial {
+  matricula: string;
+  nombre: string;
+  hora: Date;
+  localizacion: Cordenadas;
+  status: string;
+}
