@@ -16,7 +16,7 @@ export class ConsultaBdService {
                 method: 'POST',
                 body: JSON.stringify({
                     fechadesde: this.formatDate(consultaHistorial.fechadesde),
-                    fechaasta: this.formatDate(consultaHistorial.fechaasta),
+                    fechaasta: this.formatDate(consultaHistorial.fechaasta) + 86400000,
                 }),
                 headers: { 'Content-Type': 'application/json' },
             }
